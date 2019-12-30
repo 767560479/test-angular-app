@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>访问我们</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+  <!--加载模块-->
+  <div class="loading-model">
+    <div class="ant-spin ant-spin-spinning ant-spin-show-text ant-spin-lg" style="position: fixed;top: 30%;left: 50%;">
+      <span class="ant-spin-dot">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </span>
+      <div class="ant-spin-text">加载中...</div>
+    </div>
+  </div>
+
+  <div id="particles-js">
+    <div class="login">
+      <div class="login-top">
+        管理系统
+      </div>
+      <div class="login-center clearfix">
+        <!--<div class="login-center-img"><img src="assets/images/name.png"/></div>-->
+        <div class="login-center-input">
+          <input type="text" name="" [(ngModel)]="userName" placeholder="账号" onfocus="this.placeholder=''"
+            onblur="this.placeholder='账号'" (keydown.enter)="autoLogin()" />
+          <div class="login-center-input-text">账号</div>
+        </div>
+      </div>
+      <div class="login-center clearfix">
+        <!--<div class="login-center-img">-->
+        <!--<img src="assets/images/password.png"/>-->
+        <!--</div>-->
+        <div class="login-center-input">
+          <input type="password" name="" [(ngModel)]="password" placeholder="密码" onfocus="this.placeholder=''"
+            onblur="this.placeholder='密码'" (keydown.enter)="autoLogin()" />
+          <div class="login-center-input-text">
+            密码
+          </div>
+        </div>
+      </div>
+      <div (click)="login()" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()" id="submittedAction"
+        class="login-button">
+        {{loginButtonText}}
+      </div>
+    </div>
+    <div class="sk-rotating-plane"></div>
+  </div>
+
+</body>
+
+</html>
