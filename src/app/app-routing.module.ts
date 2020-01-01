@@ -4,7 +4,7 @@ import { ErrorPageComponent } from './result-page/error-page/error-page.componen
 import { LoginComponent } from './component/login/login.component';
 
 const routes: Routes = [
- // { path: 'home', loadChildren: './views/home/home.module#HomeModule' },
+  { path: 'home', loadChildren: './views/home/home.module#HomeModule' },
   { path: 'page-error', component: ErrorPageComponent },
   { path: '', component: LoginComponent},
 ];

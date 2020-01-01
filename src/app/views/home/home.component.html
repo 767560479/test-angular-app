@@ -1,3 +1,22 @@
-<p>
-  home works!
-</p>
+ <nz-layout class="left-layout">
+   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzBreakpoint]="'lg'" [nzCollapsedWidth]="0">
+     <app-home-menu-list #menuList></app-home-menu-list>
+   </nz-sider>
+   <nz-layout>
+     <!-- <nz-header style="background: #fff; padding:0;"></nz-header> -->
+
+     <nz-content >
+       <div class="menus-content">
+        <div >
+             <router-outlet ></router-outlet>
+        </div>
+       
+       </div>
+     </nz-content>
+
+     <!-- <nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer> -->
+   </nz-layout>
+ </nz-layout>
+ <!-- <ng-template #zeroTrigger>
+   <i nz-icon type="menu-fold" theme="outline"></i>
+ </ng-template> -->

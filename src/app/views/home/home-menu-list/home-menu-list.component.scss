@@ -1,0 +1,26 @@
+ .logo {
+        img {
+          width: 100px;
+        }
+ }
+ .logo-about {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   height: 40px;
+   padding: 5px;
+
+   .logo-text {
+     line-height: 32px;
+     color: white;
+     margin-left: 5px;
+     font-size: large;
+   }
+
+
+   .logo-mini {
+     img {
+       width: 50px;
+     }
+   }
+ }

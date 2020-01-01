@@ -1,3 +1,4 @@
+import { DfMessages } from './../../services/messages/df-messages.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,15 +12,15 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LoginComponent implements OnInit {
   validateForm: FormGroup; // 登陆表单
-  userName; // 登陆用户名
-  password = 'gs.500'; // 登录密码
+  userName = '767560479'; // 登陆用户名
+  password = '123456'; // 登录密码
   userDisplayName; // Cookie用户名
   loginButtonText = '登录';  // 登录按钮赋值
-  effectiveUser = '10059333';
 
   constructor(
     private fb: FormBuilder, // 表单
     private router: Router, // 路由
+    private messages: DfMessages
   ) { }
 
   ngOnInit() {
@@ -44,7 +45,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // -----
+    if (this.userName === '767560479' && this.password === '123456') {
+      this.router.navigate(['home']);
+      return ;
+    }
+    this.messages.showErrorMessage('密码错误！');
   }
 
 

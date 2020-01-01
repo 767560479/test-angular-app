@@ -1,0 +1,59 @@
+nz-header {
+  background: #fff;
+  padding: 0;
+}
+
+nz-content {
+  padding: 0 24px;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+.left-layout {
+  height: 100vh;
+
+  .home-sider {
+    overflow-y: auto;
+  }
+
+  .notice {
+    height: 40px;
+  }
+
+  .menus-content {
+    // height: calc(100vh - 173px);
+    // background-color: #fff;
+  }
+
+  .trigger {
+
+    &:hover {
+      color: #1890ff;
+    }
+
+    font-size: 18px;
+    line-height: 40px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .home-header {
+    display: flex;
+    align-items: center;
+
+    .home-header-content {
+      width: 100%;
+    }
+  }
+}
+
+.right-layout {
+  padding-left: calc(100vw - 100%);
+}
