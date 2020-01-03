@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
+import { LoginGuard } from './guard/login.guard';
 
 registerLocaleData(zh);
 
@@ -30,7 +31,7 @@ registerLocaleData(zh);
     NgZorroAntdModule,
     HttpClientModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }, DatePipe],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }, DatePipe, LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

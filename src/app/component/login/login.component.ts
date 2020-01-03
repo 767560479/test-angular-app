@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd';
 import { CookieService } from 'ngx-cookie-service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder, // 表单
     private router: Router, // 路由
-    private messages: DfMessages
+    private messages: DfMessages,
+    private user: UserService
   ) { }
 
   ngOnInit() {
@@ -46,6 +48,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.userName === '767560479' && this.password === '123456') {
+      this.user.userName = this.userName;
       this.router.navigate(['home']);
       return ;
     }

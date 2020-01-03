@@ -1,6 +1,6 @@
 import { UserService } from './../services/user/user.service';
 import {
-  CanActivate
+  CanActivate,  Router
 } from '@angular/router';
 import {
   Observable
@@ -13,11 +13,16 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 export class LoginGuard implements CanActivate {
     constructor(
-        private userService: UserService
+        private userService: UserService,
+        private route: Router
     ) {}
 
   canActivate(): Observable < boolean > | Promise < boolean > | boolean {
-    return true;
+    if (this.userService.isLoggedIn()) {
+      return true;
+    }
+    this.route.navigate(['login']);
+    return false;
   }
 
 
@@ -25,14 +30,14 @@ export class LoginGuard implements CanActivate {
    * 校验是否登陆
    */
   checkLogin(): Observable < boolean > | Promise < boolean > | boolean {
-      if (this.userService.isLoggedIn) {
+      if (this.userService.isLoggedIn()) {
           return true;
       }
     //   if (!environment.production) { // 本地环境
     //   }
-      return new Observable<boolean>((observer) => { // 返回一个异步请求
-        // 单点
-      });
+      // return new Observable<boolean>((observer) => { // 返回一个异步请求
+      //   // 单点
+      // });
 
   }
 
